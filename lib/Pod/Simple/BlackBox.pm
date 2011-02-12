@@ -202,6 +202,10 @@ sub parse_lines {             # Usage: $parser->parse_lines(@lines)
       }
       
       $self->{'last_was_blank'} = 1;
+	  
+	  if ($line =~ m/^\s+$/s and @$paras and $paras->[-1][0] ne "~Verbatim") {
+	  	$self->whine($self->{'line_count'}, "line containing nothing but whitespace");
+	  } 
       
     } elsif($self->{'last_was_blank'}) {  # A non-blank line starting a new para...
       

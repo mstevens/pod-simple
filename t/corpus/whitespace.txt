@@ -1,0 +1,9 @@
+=pod
+
+=head1 FOO
+
+Some reasonably sensible pod.
+   
+Shockingly, the previous line had whitespace.
+
+=cut
